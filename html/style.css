@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-family:calibri;
+    font-size: 18px;
+    color:#2b2a2a;
+}
+
+p{
+    margin:0;
+}
+span.kolor{
+    margin-right: 6px;
+}
+
+.kolor{
+    color:#888;
+}
+.inp{
+    color:#2b2a2a;
+    border:#8e8e8e 1px solid;
+    border-radius: 2px;
+}
+.inp:hover{
+    border-color:#1a1919;
+}
+.inp:focus{
+    border-width: 2px;
+    border-color:#1a1919;
+}
+.cen{
+    text-align: center;
+}
+
+.bor{
+    border:#8e8e8e 1px solid;
+}
+
+body{
+    margin:0;
+}
+
+img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#wrapper{
+    min-height: 100px;
+    width: 810px;
+    margin: 20px auto;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.marg{
+    padding: 5px;
+    margin: 3px;
+}
+
+#top{
+    display: flex;
+}
+
+#top_l{
+
+    width: 42%;
+    height: 160px;
+    float: left;
+    
+}
+
+#top_r{
+    width: 58%;
+    float: left;
+}
+
+#mid{  
+    width: 100%;
+}
+#footer_t{
+    display: flex;
+}
+#footer_t_1{
+    float: left;
+    width: 55%;
+    border: #8e8e8e 1px solid;
+    border-bottom: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+#footer_t_2{
+    margin-left: 6px;
+}
+#footer_m{
+    clear: both;
+    width: 100%;
+    
+    border: #8e8e8e 1px solid;
+    border-top: 0px;
+    margin-top: 0px;
+}
+#footer_b{
+    display: flex;
+}
+#footer_b_1{
+    float: left;
+    width: 60%;
+}
+#footer_b_2{
+    float: left;
+    width: 40%;
+
+}
+#border_1{
+    float: left;
+    width: 45%;
+}
+#borderek{
+    border-bottom:#8e8e8e 1px solid;
+    margin-right: 3px;
+    margin-top: 5px;
+}
+
+.expandable-textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1px 6px;
+  
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+    min-height: 60px;
+    line-height: 20px;
+  }
+
+#mid td{
+    border:#8e8e8e 1px solid;
+    padding:5px 2px;
+}
+#mid table{
+    width: 100%;
+}
+.mid_tab{
+    text-align: center;
+    background-color: #c4c4c4;
+}
+.expandable-input {
+    font-family: inherit;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+    min-height: 22px;
+    line-height: 20px;
+  }
+  td input.inp{
+    height: 22px;
+    line-height: 20px;
+  }
+.guziki{
+    margin: 5px 2px;
+    background-color: #e9e9ed;
+    border: 1.5px solid #8f8f9d;
+    border-radius: 3px;
+    padding: 0 10px;
+    transition: 0.3s;
+}
+.guziki:hover{
+    background-color: #8e8e8e;
+    border: 1.5px solid #525252;
+    cursor:pointer;
+}
+
+
+
+
+
+

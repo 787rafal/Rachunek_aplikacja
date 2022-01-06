@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachunek Imienny</title>
+
+
+</head>
+<body onload="day();">
+    <div id="wrapper">
+        <img src="logo.jpg" class="bor"" alt="" srcset="">
+        <div id="top">
+            <div id="top_l" class="marg bor">
+                <p class="kolor cen" style="font-size: 12px;" >Pieczątka firmowa</p>
+            </div>
+            <div id="top_r">
+                <div id="top_r_1" class="marg bor">
+                    <input type="text" class="inp" style="text-align: right;">
+                    <span class="kolor">, dnia  </span>
+                    <input type="text" class="inp" name="data" style="width: 150px;">
+                </div>
+                <div id="top_r_2" class="marg">
+                    <span class="kolor">Rachunek nr  </span>
+                    <input type="text" class="inp" style="width:329px;margin-bottom:5px;">
+                    <div style="display: flex;">
+                        <div style="float: left;width: 7%;">
+                            <span class="kolor">Dla </span>
+                        </div>
+                        <div style="float: left;width:93%";>
+                            <div class="expandable-textarea inp" role="textbox" contenteditable></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div id="mid" class="marg">
+                <table>
+                    <tr>
+                        <td class="mid_tab" style="width:36%"><p>Nazwa towaru</p></td>
+                        <td class="mid_tab" style="width:12%"><p>Jm.</p></td>
+                        <td class="mid_tab" style="width:12%"><p>Ilość</p></td>
+                        <td class="mid_tab" style="width: 16%;"><p>Cena jedn.</p></td>
+                        <td class="mid_tab" style="width:24%"><p>Wartość</p></td>
+                    </tr>
+                    <tr>
+                        <td style="flex:4.5"><div class="expandable-input inp" role="textbox" contenteditable></div></td>
+                        <td style="flex:1.5"><div class="expandable-input inp" role="textbox" contenteditable></div></td>
+                        <td style="flex:1.5"><input type="text" class="inp" style="width:100%;" onkeyup="policz(1)" name="a1" value=""></td>
+                        <td style="flex:2"> <input type="text" class="inp" style="width:99px; text-align: right;" onkeyup="policz(1)" name="b1"> zł</td>
+                        <td style="flex:3"> <input type="text" name="wynik" class="inp" style="width:160px;text-align: right;" id="wynik1" onkeyup="wynik()"> zł</td>
+                    </tr>
+                        
+
+                </table>
+                        
+                        <button class="guziki" onclick="dodaj()">Dodaj pole</button><button class="guziki" name="usun" onclick="usun()" style="display: none;">Usuń pole</button>
+                        
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div id="footer_t">
+                <div id="footer_t_1" class="marg">
+                    <span class="kolor">Bank:  </span>
+                    <input type="text" class="inp" style="width:360px">
+                </div>
+                <div id="border_1">
+                    <div id="footer_t_2" class="marg bor">
+                        <span class="kolor">Razem:  </span>
+                        <input type="text" class="inp" name="wynik_koncowy" style="width:248px;text-align: right;"> zł
+                    </div>
+                    <div id="borderek"></div>
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div id="footer_m" class="marg">
+                    <span class="kolor">Nr konta:  </span>
+                    <input type="text" class="inp" style="width:640px">
+                </div>
+            </div>
+
+            <div id="footer_b">
+                <div id="footer_b_1" class="marg bor">
+                    <span class="kolor">Forma płatności:  </span>
+                    <input type="text" class="inp" style="width:300px; margin-bottom:5px;">
+                    <div style="display: flex;">
+                        <div style="float: left;width: 15%;margin-top:1.5px;">
+                            <span class="kolor">Słownie: </span>
+                        </div>
+                        <div style="float: left;width:85%";>
+                            <textarea name="" id="" class="inp" style="resize:none; width: 100%;min-height: 70px; overflow: hidden;"></textarea>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="footer_b_2" class="marg bor">
+                    <p class="kolor cen" style="font-size: 12px;margin-top: 90px;" >Podpis i pieczątka</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="guziki" onclick="drukuj()">Drukuj</button>
+        <button class="guziki" onclick="zapisz()">Zapisz</button>
+        <button class="guziki" onclick="kasuj()">Kasuj</button>
+        
+    </div>
+</body>
+<script>
+    function day(){
+        var today = new Date();
+        var date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
+        var input = document.querySelector("input[name=data]");
+        input.value = date;
+    }
+
+    function policz(x){
+        var nazwa = "input[id=wynik"+x+"]";
+        var a = document.querySelector("input[name=a"+x+"]").value;
+        var b = document.querySelector("input[name=b"+x+"]").value;
+        var c = a*b;
+        document.querySelector(nazwa).value=c.toFixed(2);
+        wynik();
+    }
+
+    var licznik=2;
+    function dodaj(){ 
+        var table = document.querySelector('table');
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = '<div class="expandable-input inp" role="textbox" contenteditable></div>';
+        cell2.innerHTML = '<div class="expandable-input inp" role="textbox" contenteditable></div>';
+        cell3.innerHTML = '<input type="text" class="inp" style="width:100%;" onkeyup="policz('+licznik+')" name="a'+licznik+'">';
+        cell4.innerHTML = '<input type="text" class="inp" style="width:99px; text-align: right;" onkeyup="policz('+licznik+')" name="b'+licznik+'"> zł';
+        cell5.innerHTML = '<input type="text" name="wynik" onkeyup="wynik()" class="inp" style="width:160px;text-align: right;" id="wynik'+licznik+'"> zł';
+        cell1.style = "flex:4.5";
+        cell2.style = "flex:1.5";
+        cell3.style.flex = 1.5;
+        cell4.style.flex = 2;
+        cell5.style.flex = 3;
+        licznik = licznik+1;
+        document.querySelector('button[name=usun]').style.display = "";
+    }
+    function usun(){
+        licznik = licznik-1;
+        var table = document.querySelector('table');
+        table.deleteRow(-1);
+        if(licznik < 3){
+            document.querySelector('button[name=usun]').style.display = "none";
+        }
+        wynik();
+    }
+    function wynik(){
+        var wynik = document.querySelectorAll('input[name=wynik]');
+        var suma = 0;
+        for (let i = 0; i< wynik.length; i++) {
+            const zmienna = Number(wynik[i].value);
+            if(!isNaN(zmienna)){
+                suma += zmienna;
+            }
+        }
+        document.querySelector('input[name=wynik_koncowy]').value = suma.toFixed(2);
+    }
+    function off(){
+        var button = document.querySelectorAll('button');
+        for (let i = 0; i< button.length; i++) {
+            button[i].style.display = "none";
+        }
+        var inp = document.querySelectorAll('[class=inp]');
+        for (let i = 0; i< inp.length; i++) {
+            inp[i].style.border = "0";
+        }
+        var div = document.querySelectorAll('[role=textbox]');
+        for (let i = 0; i< div.length; i++) {
+            div[i].style.border = "0";
+        }
+    }
+    function on(){
+        var button = document.querySelectorAll('button');
+        for (let i = 0; i< button.length; i++) {
+            button[i].style.display = "";
+        }
+        if(licznik < 3){
+            document.querySelector('button[name=usun]').style.display = "none";
+        }
+        var inp = document.querySelectorAll('[class=inp]');
+        for (let i = 0; i< inp.length; i++) {
+            inp[i].style.border = "";
+        }
+        var div = document.querySelectorAll('[role=textbox]');
+        for (let i = 0; i< div.length; i++) {
+            div[i].style.border = "";
+        }
+    }
+    function drukuj(){
+        off();
+        window.print();
+        on();
+    }
+    function kasuj(){
+        window.location.reload(true);
+    }
+    function zapisz(){
+        alert("Funkcja dostepna wkrótce!");
+    }
+</script>
+</html>
