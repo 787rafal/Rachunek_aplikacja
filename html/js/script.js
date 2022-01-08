@@ -98,3 +98,7 @@ function kasuj(){
 function zapisz(){
     alert("Funkcja dostepna wkrótce!");
 }
+function pdf(){
+    var element = document.getElementById('wrapper');
+    html2pdf().from(element).save();
+}
