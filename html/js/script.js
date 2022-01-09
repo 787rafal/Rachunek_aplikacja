@@ -98,7 +98,48 @@ function kasuj(){
 function zapisz(){
     alert("Funkcja dostepna wkrótce!");
 }
-function pdf(){
-    var element = document.getElementById('wrapper');
-    html2pdf().from(element).save();
+function pdf_down(nazwa){
+    const element = document.querySelector('body');
+    var h = document.querySelector('div[id=wrapper]').clientHeight;
+    h=Number(h)+20;
+    window.scrollTo(0,0);
+    //console.log(h);
+    console.log(nazwa);
+    var opt = {
+        margin:       6,
+        filename:     nazwa+'.pdf',
+        image:        { type: 'jpeg', quality: 0.99 },
+        html2canvas:  { scale: 2,letterRendering: true , allowTaint: true, useCORS: true, width: '810', height: h ,},
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+    html2pdf().set(opt).from(element).save();
+}
+function pdf_2(nazwa){
+    off();
+    //console.log(nazwa);
+    pdf_down(nazwa);
+    const myTimeout = setTimeout(on, 100);
+}
+
+
+function test(){
+    modernAlert({
+        backgroundColor: '#fff',
+        color: '#555',
+        borderColor: '#ccc',
+        titleBackgroundColor: '#c4c4c4',
+        titleColor: '#fff',
+        defaultButtonsText: {ok : 'Zapisz', cancel : 'Anuluj'},
+        overlayColor: 'rgba(0, 0, 0, 0.5)',
+        overlayBlur: 2, //Set false to disable it or interger for pixle
+        overrideNative: true
+    });
+    prompt('Nazwa pliku :','Zapisz do PDF', callback_function);
+    function callback_function(valueFromPrompt) { 
+        if(!(valueFromPrompt == false)){
+            //console.log(valueFromPrompt);
+            pdf_2(valueFromPrompt);
+        }
+    }
 }
