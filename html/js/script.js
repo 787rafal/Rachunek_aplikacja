@@ -55,6 +55,7 @@ function wynik(){
         }
     }
     document.querySelector('input[name=wynik_koncowy]').value = suma.toFixed(2);
+    wynik_slowa(suma.toFixed(2));
 }
 function off(){
     var button = document.querySelectorAll('button');

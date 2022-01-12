@@ -10,6 +10,7 @@
     <script src="js/bluebird.min.js"></script>
     <script src="js/html2pdf.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/liczby.js"></script>
     <style type="text/css" media="print">
         @media print
         {
@@ -98,7 +99,7 @@
                 <div id="border_1">
                     <div id="footer_t_2" class="marg bor">
                         <span class="kolor">Razem:  </span>
-                        <input type="text" class="inp" name="wynik_koncowy" style="width:248px;text-align: right;"> zł
+                        <input type="text" class="inp" name="wynik_koncowy" onchange="wynik_slowa()"style="width:248px;text-align: right;"> zł
                     </div>
                     <div id="borderek"></div>
                 </div>
@@ -124,7 +125,7 @@
                             <span class="kolor">Słownie: </span>
                         </div>
                         <div style="float: left;width:85%";>
-                            <div class="expandable-input inp" role="textbox" contenteditable></div>
+                            <div class="expandable-input inp" role="textbox" name="slownie_wynik" contenteditable></div>
                         </div>
                     </div>
                     
