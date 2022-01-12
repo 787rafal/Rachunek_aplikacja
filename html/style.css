@@ -185,6 +185,7 @@ input[type=button]{
     border-radius: 3px;
     padding: 0 10px;
     transition: 0.3s;
+    font-family: 'fontello';
     font-family: "century gothic";
     font-size: 15px;
     font-weight: bold;
@@ -209,6 +210,9 @@ select{
 }
 select:hover{
     cursor: pointer;
+}
+i{
+    margin-right: 0px !important;
 }
 
 
