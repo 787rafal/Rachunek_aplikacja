@@ -6,6 +6,16 @@
     color:#2b2a2a;
 }
 
+body{
+    margin: 0;
+    background-color: #2b2a2a;
+    background-image: url('image.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 p{
     margin:0;
 }
@@ -36,11 +46,6 @@ span.kolor{
     border:#8e8e8e 1px solid;
 }
 
-body{
-    margin:0;
-    background-color: #2b2a2a;
-}
-
 img{
     width: 100%;
     margin-bottom: 10px;
@@ -52,7 +57,7 @@ img{
     margin: 20px auto;
     padding: 10px;
     background-color: white;
-    border-radius: 1px;
+    border-radius: 10px;
 }
 
 .marg{
@@ -164,16 +169,39 @@ img{
   }
 .guziki{
     margin: 5px 2px;
-    background-color: #e9e9ed;
+    background-color: #c4c4c4;
     border: 1.5px solid #8f8f9d;
     border-radius: 3px;
     padding: 0 10px;
     transition: 0.3s;
+    font-family: "century gothic";
+    font-size: 15px;
+    font-weight: bold;
 }
-.guziki:hover{
-    background-color: #8e8e8e;
+
+input[type=button]{
+    background-color: #c4c4c4;
+    border: 1.5px solid #8f8f9d;
+    border-radius: 3px;
+    padding: 0 10px;
+    transition: 0.3s;
+    font-family: "century gothic";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type=button]:hover{
+    background-color: #777777;
     border: 1.5px solid #525252;
-    cursor:pointer;
+    cursor: pointer;
+    color: black;
+}
+
+.guziki:hover{
+    background-color: #777777;
+    border: 1.5px solid #525252;
+    cursor: pointer;
+    color: black;
 }
 
 
