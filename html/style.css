@@ -203,6 +203,13 @@ input[type=button]:hover{
     cursor: pointer;
     color: black;
 }
+select{
+    background-color: white;
+    border:#8e8e8e 1px solid;
+}
+select:hover{
+    cursor: pointer;
+}
 
 
 

@@ -24,8 +24,8 @@ function dodaj(){
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
     cell1.innerHTML = '<div class="expandable-input inp" role="textbox" contenteditable></div>';
-    cell2.innerHTML = '<div class="expandable-input inp" role="textbox" contenteditable></div>';
-    cell3.innerHTML = '<input type="text" class="inp" style="width:100%;" onkeyup="policz('+licznik+')" name="a'+licznik+'">';
+    cell2.innerHTML = '<div class="expandable-input inp" role="textbox" style="text-align: center;" contenteditable></div>';
+    cell3.innerHTML = '<input type="text" class="inp" style="width:100%; text-align: center;" onkeyup="policz('+licznik+')" name="a'+licznik+'">';
     cell4.innerHTML = '<input type="text" class="inp" style="width:99px; text-align: right;" onkeyup="policz('+licznik+')" name="b'+licznik+'"> zł';
     cell5.innerHTML = '<input type="text" name="wynik" onkeyup="wynik()" class="inp" style="width:160px;text-align: right;" id="wynik'+licznik+'"> zł';
     cell1.style = "flex:4.5";
@@ -72,6 +72,9 @@ function off(){
     document.getElementById("wrapper").style.paddingTop = 0;
     document.getElementById("wrapper").style.borderRadius = 0;
     document.querySelector("body").style = "background-image:none;";
+    select = document.querySelector("select");
+    select.style = "-moz-appearance:none;-webkit-appearance:none;appearance:none;";
+    select.style.border = 0;
 }
 function on(){
     var button = document.querySelectorAll('button');
@@ -92,6 +95,8 @@ function on(){
     document.getElementById("wrapper").style.paddingTop = 10+"px";
     document.querySelector("body").style = "background-image: url('image.jpg');";
     document.getElementById("wrapper").style.borderRadius = "10px";
+    select.style = "-moz-appearance:arrow_drop_down;-webkit-appearance:arrow_drop_down;appearance:arrow_drop_down;width: 300px;margin-bottom: 5px;";
+    select.style.border = "";
 }
 function drukuj(){
     off();

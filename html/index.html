@@ -75,8 +75,8 @@
                     </tr>
                     <tr>
                         <td style="flex:4.5"><div class="expandable-input inp" role="textbox" contenteditable></div></td>
-                        <td style="flex:1.5"><div class="expandable-input inp" role="textbox" contenteditable></div></td>
-                        <td style="flex:1.5"><input type="text" class="inp" style="width:100%;" onkeyup="policz(1)" name="a1" value=""></td>
+                        <td style="flex:1.5"><div class="expandable-input inp" role="textbox" style="text-align: center;" contenteditable></div></td>
+                        <td style="flex:1.5"><input type="text" class="inp" style="width:100%;text-align: center;" onkeyup="policz(1)" name="a1" value=""></td>
                         <td style="flex:2"> <input type="text" class="inp" style="width:99px; text-align: right;" onkeyup="policz(1)" name="b1"> zł</td>
                         <td style="flex:3"> <input type="text" name="wynik" class="inp" style="width:160px;text-align: right;" id="wynik1" onkeyup="wynik()"> zł</td>
                     </tr>
@@ -114,7 +114,11 @@
             <div id="footer_b">
                 <div id="footer_b_1" class="marg bor">
                     <span class="kolor">Forma płatności:  </span>
-                    <input type="text" class="inp" style="width:300px; margin-bottom:5px;">
+                    <!--<input type="select" class="inp" style="width:300px; margin-bottom:5px;">-->
+                    <select class="inp" style="width:300px; margin-bottom:5px;"">
+                        <option>Gotówka</option>
+                        <option>Przelew</option>
+                    </select>
                     <div style="display: flex;">
                         <div style="float: left;width: 15%;">
                             <span class="kolor">Słownie: </span>
