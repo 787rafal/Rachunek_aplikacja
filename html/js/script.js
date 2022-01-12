@@ -89,7 +89,9 @@ function on(){
 }
 function drukuj(){
     off();
+    document.querySelector("body").style.backgroundColor = "white";
     window.print();
+    document.querySelector("body").style.backgroundColor = "white";
     on();
 }
 function kasuj(){
