@@ -69,6 +69,9 @@ function off(){
     for (let i = 0; i< div.length; i++) {
         div[i].style.border = "0";
     }
+    document.getElementById("wrapper").style.paddingTop = 0;
+    document.getElementById("wrapper").style.borderRadius = 0;
+    document.querySelector("body").style = "background-image:none;";
 }
 function on(){
     var button = document.querySelectorAll('button');
@@ -86,12 +89,15 @@ function on(){
     for (let i = 0; i< div.length; i++) {
         div[i].style.border = "";
     }
+    document.getElementById("wrapper").style.paddingTop = 10+"px";
+    document.querySelector("body").style = "background-image: url('image.jpg');";
+    document.getElementById("wrapper").style.borderRadius = "10px";
 }
 function drukuj(){
     off();
-    document.querySelector("body").style.backgroundColor = "white";
+    document.querySelector("body").style.backgroundImage = "";
     window.print();
-    document.querySelector("body").style.backgroundColor = "white";
+    document.querySelector("body").style.backgroundImage = "url('image.jpg')";
     on();
 }
 function kasuj(){
@@ -119,11 +125,9 @@ function pdf_down(nazwa){
 }
 function pdf_2(nazwa){
     off();
-    document.getElementById("wrapper").style.paddingTop = 0;
     //console.log(nazwa);
     pdf_down(nazwa);
     const myTimeout = setTimeout(on, 100);
-    document.getElementById("wrapper").style.paddingTop = 10+"px";
 }
 
 
