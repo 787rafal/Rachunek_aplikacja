@@ -38,6 +38,7 @@ span.kolor{
 
 body{
     margin:0;
+    background-color: #2b2a2a;
 }
 
 img{
@@ -50,7 +51,8 @@ img{
     width: 810px;
     margin: 20px auto;
     padding: 10px;
-    padding-top: 0px;
+    background-color: white;
+    border-radius: 1px;
 }
 
 .marg{

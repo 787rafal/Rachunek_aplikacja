@@ -117,9 +117,11 @@ function pdf_down(nazwa){
 }
 function pdf_2(nazwa){
     off();
+    document.getElementById("wrapper").style.paddingTop = 0;
     //console.log(nazwa);
     pdf_down(nazwa);
     const myTimeout = setTimeout(on, 100);
+    document.getElementById("wrapper").style.paddingTop = 10+"px";
 }
 
 
