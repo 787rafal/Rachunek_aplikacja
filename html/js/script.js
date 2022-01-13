@@ -73,6 +73,7 @@ function off(){
     document.getElementById("wrapper").style.paddingTop = 0;
     document.getElementById("wrapper").style.borderRadius = 0;
     document.querySelector("body").style = "background-image:none;";
+    document.querySelector("body").className = "example"
     select = document.querySelector("select");
     select.style = "-moz-appearance:none;-webkit-appearance:none;appearance:none;";
     select.style.border = 0;
@@ -95,6 +96,7 @@ function on(){
     }
     document.getElementById("wrapper").style.paddingTop = 10+"px";
     document.querySelector("body").style = "background-image: url('image.jpg');";
+    document.querySelector("body").className ="";
     document.getElementById("wrapper").style.borderRadius = "10px";
     select.style = "-moz-appearance:arrow_drop_down;-webkit-appearance:arrow_drop_down;appearance:arrow_drop_down;width: 300px;margin-bottom: 5px;";
     select.style.border = "";

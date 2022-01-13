@@ -5,6 +5,14 @@
     font-size: 18px;
     color:#2b2a2a;
 }
+.example::-webkit-scrollbar {
+    display: none;
+  }
+
+.example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 
 body{
     margin: 0;
