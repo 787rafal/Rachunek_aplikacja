@@ -64,12 +64,13 @@ function off(){
     }
     var inp = document.querySelectorAll('[class=inp]');
     for (let i = 0; i< inp.length; i++) {
-        inp[i].style.border = "0";
+        inp[i].style.borderColor = "white";
     }
     var div = document.querySelectorAll('[role=textbox]');
     for (let i = 0; i< div.length; i++) {
-        div[i].style.border = "0";
+        div[i].style.borderColor = "white";
     }
+    document.getElementById("wrapper").style.marginTop = 0;
     document.getElementById("wrapper").style.paddingTop = 0;
     document.getElementById("wrapper").style.borderRadius = 0;
     document.querySelector("body").style = "background-image:none;";
@@ -95,6 +96,7 @@ function on(){
         div[i].style.border = "";
     }
     document.getElementById("wrapper").style.paddingTop = 10+"px";
+    document.getElementById("wrapper").style.marginTop = 20+"px";
     document.querySelector("body").style = "background-image: url('image.jpg');";
     document.querySelector("body").className ="";
     document.getElementById("wrapper").style.borderRadius = "10px";
@@ -117,7 +119,7 @@ function zapisz(){
 function pdf_down(nazwa){
     const element = document.querySelector('body');
     var h = document.querySelector('div[id=wrapper]').clientHeight;
-    h=Number(h)+20;
+    h=Number(h);
     window.scrollTo(0,0);
     //console.log(h);
     console.log(nazwa);
