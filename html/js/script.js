@@ -75,9 +75,11 @@ function off(){
     document.getElementById("wrapper").style.borderRadius = 0;
     document.querySelector("body").style = "background-image:none;";
     document.querySelector("body").className = "example"
-    select = document.querySelector("select");
-    select.style = "-moz-appearance:none;-webkit-appearance:none;appearance:none;";
-    select.style.border = 0;
+    select = document.querySelectorAll("select");
+    for (let xd = 0; xd < select.length; xd++) {
+        select[xd].style = "-moz-appearance:none;-webkit-appearance:none;appearance:none;";
+        select[xd].style.border = 0;
+    }
 }
 function on(){
     var button = document.querySelectorAll('button');
@@ -100,12 +102,17 @@ function on(){
     document.querySelector("body").style = "background-image: url('image.jpg');";
     document.querySelector("body").className ="";
     document.getElementById("wrapper").style.borderRadius = "10px";
-    select.style = "-moz-appearance:arrow_drop_down;-webkit-appearance:arrow_drop_down;appearance:arrow_drop_down;width: 300px;margin-bottom: 5px;";
-    select.style.border = "";
+    select = document.querySelectorAll("select");
+    for (let xd = 0; xd < select.length; xd++) {
+        select[xd].style = "-moz-appearance:arrow_drop_down;-webkit-appearance:arrow_drop_down;appearance:arrow_drop_down;width: 300px;margin-bottom: 5px;";
+        select[xd].style.border = ""
+    }
+
 }
 function drukuj(){
     off();
     document.querySelector("body").style.backgroundImage = "";
+    document.querySelector("body").className = ""
     window.print();
     document.querySelector("body").style.backgroundImage = "url('image.jpg')";
     on();
